@@ -209,6 +209,7 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/emerald/proprietary/vendor/etc/ecc_list_OP20.xml:$(TARGET_COPY_OUT_VENDOR)/etc/ecc_list_OP20.xml \
     vendor/xiaomi/emerald/proprietary/vendor/etc/ecc_list_OP236.xml:$(TARGET_COPY_OUT_VENDOR)/etc/ecc_list_OP236.xml \
     vendor/xiaomi/emerald/proprietary/vendor/etc/ecc_list_preference.xml:$(TARGET_COPY_OUT_VENDOR)/etc/ecc_list_preference.xml \
+    vendor/xiaomi/emerald/proprietary/vendor/etc/elliptic_sensor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/elliptic_sensor.xml \
     vendor/xiaomi/emerald/proprietary/vendor/etc/gnss/agps_profiles_conf2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/agps_profiles_conf2.xml \
     vendor/xiaomi/emerald/proprietary/vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_ATnT_Mexico.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/carrier/agps_profiles_conf2_carrier_ATnT_Mexico.xml \
     vendor/xiaomi/emerald/proprietary/vendor/etc/gnss/carrier/agps_profiles_conf2_carrier_ATnT_US.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/carrier/agps_profiles_conf2_carrier_ATnT_US.xml \
@@ -427,6 +428,11 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/emerald/proprietary/vendor/etc/security/cacerts_supl/lab/b805b58a.0:$(TARGET_COPY_OUT_VENDOR)/etc/security/cacerts_supl/lab/b805b58a.0 \
     vendor/xiaomi/emerald/proprietary/vendor/etc/security/cacerts_supl/lab/ed7b215e.0:$(TARGET_COPY_OUT_VENDOR)/etc/security/cacerts_supl/lab/ed7b215e.0 \
     vendor/xiaomi/emerald/proprietary/vendor/etc/security/cacerts_supl/lab/ef4b31e6.0:$(TARGET_COPY_OUT_VENDOR)/etc/security/cacerts_supl/lab/ef4b31e6.0 \
+    vendor/xiaomi/emerald/proprietary/vendor/etc/sensors/lightSensorCali.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/lightSensorCali.json \
+    vendor/xiaomi/emerald/proprietary/vendor/etc/sensors/lightSensorConfig.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/lightSensorConfig.json \
+    vendor/xiaomi/emerald/proprietary/vendor/etc/sensors/lightSensorConfigSecPannel.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/lightSensorConfigSecPannel.json \
+    vendor/xiaomi/emerald/proprietary/vendor/etc/sensors/lightSensorConfigSecPannelAndSecSensor.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/lightSensorConfigSecPannelAndSecSensor.json \
+    vendor/xiaomi/emerald/proprietary/vendor/etc/sensors/lightSensorConfigSecSensor.json:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/lightSensorConfigSecSensor.json \
     vendor/xiaomi/emerald/proprietary/vendor/etc/slp_conf:$(TARGET_COPY_OUT_VENDOR)/etc/slp_conf \
     vendor/xiaomi/emerald/proprietary/vendor/etc/smsdbvisitor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/smsdbvisitor.xml \
     vendor/xiaomi/emerald/proprietary/vendor/etc/special_pws_channel.xml:$(TARGET_COPY_OUT_VENDOR)/etc/special_pws_channel.xml \
