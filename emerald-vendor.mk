@@ -47,6 +47,7 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/emerald/proprietary/vendor/bin/hw/android.hardware.thermal@2.0-service.mtk:$(TARGET_COPY_OUT_VENDOR)/bin/hw/android.hardware.thermal@2.0-service.mtk \
     vendor/xiaomi/emerald/proprietary/vendor/bin/hw/android.hardware.usb@1.2-service-mediatekv2:$(TARGET_COPY_OUT_VENDOR)/bin/hw/android.hardware.usb@1.2-service-mediatekv2 \
     vendor/xiaomi/emerald/proprietary/vendor/bin/hw/mt6789/android.hardware.graphics.allocator@4.0-service-mediatek.mt6789:$(TARGET_COPY_OUT_VENDOR)/bin/hw/mt6789/android.hardware.graphics.allocator@4.0-service-mediatek.mt6789 \
+    vendor/xiaomi/emerald/proprietary/vendor/bin/hw/mt6789/camerahalserver:$(TARGET_COPY_OUT_VENDOR)/bin/hw/mt6789/camerahalserver \
     vendor/xiaomi/emerald/proprietary/vendor/bin/hw/mtkfusionrild:$(TARGET_COPY_OUT_VENDOR)/bin/hw/mtkfusionrild \
     vendor/xiaomi/emerald/proprietary/vendor/bin/hw/tetheroffloadservice:$(TARGET_COPY_OUT_VENDOR)/bin/hw/tetheroffloadservice \
     vendor/xiaomi/emerald/proprietary/vendor/bin/hw/vendor.mediatek.hardware.mmagent@1.1-service:$(TARGET_COPY_OUT_VENDOR)/bin/hw/vendor.mediatek.hardware.mmagent@1.1-service \
@@ -237,6 +238,7 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/emerald/proprietary/vendor/etc/init/android.hardware.thermal@2.0-service.mtk.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.thermal@2.0-service.mtk.rc \
     vendor/xiaomi/emerald/proprietary/vendor/etc/init/android.hardware.usb@1.2-service-mediatekv2.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.usb@1.2-service-mediatekv2.rc \
     vendor/xiaomi/emerald/proprietary/vendor/etc/init/atcid.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/atcid.rc \
+    vendor/xiaomi/emerald/proprietary/vendor/etc/init/camerahalserver.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/camerahalserver.rc \
     vendor/xiaomi/emerald/proprietary/vendor/etc/init/chipinfo_init.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/chipinfo_init.rc \
     vendor/xiaomi/emerald/proprietary/vendor/etc/init/gsm0710muxd.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/gsm0710muxd.rc \
     vendor/xiaomi/emerald/proprietary/vendor/etc/init/hw/android.hardware.nfc@1.2-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/android.hardware.nfc@1.2-service.rc \
@@ -698,6 +700,7 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/ese_client.so:$(TARGET_COPY_OUT_VENDOR)/lib64/ese_client.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/ese_spi_nxp.so:$(TARGET_COPY_OUT_VENDOR)/lib64/ese_spi_nxp.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/hal_libnfc.so:$(TARGET_COPY_OUT_VENDOR)/lib64/hal_libnfc.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/hq_algoutils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/hq_algoutils.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/hw/android.hardware.bluetooth@1.1-impl-mediatek.so:$(TARGET_COPY_OUT_VENDOR)/lib64/hw/android.hardware.bluetooth@1.1-impl-mediatek.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/hw/android.hardware.gnss-impl-mediatek.so:$(TARGET_COPY_OUT_VENDOR)/lib64/hw/android.hardware.gnss-impl-mediatek.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/hw/android.hardware.gnss@2.1-impl-mediatek.so:$(TARGET_COPY_OUT_VENDOR)/lib64/hw/android.hardware.gnss@2.1-impl-mediatek.so \
@@ -709,9 +712,16 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/hw/gps.default.so:$(TARGET_COPY_OUT_VENDOR)/lib64/hw/gps.default.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/hw/hwcomposer.mtk_common.so:$(TARGET_COPY_OUT_VENDOR)/lib64/hw/hwcomposer.mtk_common.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/hw/libSoftGatekeeper.so:$(TARGET_COPY_OUT_VENDOR)/lib64/hw/libSoftGatekeeper.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/hw/mt6789/android.hardware.camera.provider@2.6-impl-mediatek.so:$(TARGET_COPY_OUT_VENDOR)/lib64/hw/mt6789/android.hardware.camera.provider@2.6-impl-mediatek.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/hw/mt6789/android.hardware.graphics.allocator@4.0-impl-mediatek.so:$(TARGET_COPY_OUT_VENDOR)/lib64/hw/mt6789/android.hardware.graphics.allocator@4.0-impl-mediatek.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/hw/mt6789/android.hardware.graphics.mapper@4.0-impl-mediatek.so:$(TARGET_COPY_OUT_VENDOR)/lib64/hw/mt6789/android.hardware.graphics.mapper@4.0-impl-mediatek.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/hw/mt6789/gralloc.common.so:$(TARGET_COPY_OUT_VENDOR)/lib64/hw/mt6789/gralloc.common.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/hw/mt6789/vendor.mediatek.hardware.camera.atms@1.0-impl.so:$(TARGET_COPY_OUT_VENDOR)/lib64/hw/mt6789/vendor.mediatek.hardware.camera.atms@1.0-impl.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/hw/mt6789/vendor.mediatek.hardware.camera.bgservice@1.1-impl.so:$(TARGET_COPY_OUT_VENDOR)/lib64/hw/mt6789/vendor.mediatek.hardware.camera.bgservice@1.1-impl.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/hw/mt6789/vendor.mediatek.hardware.camera.ccap@1.0-impl.so:$(TARGET_COPY_OUT_VENDOR)/lib64/hw/mt6789/vendor.mediatek.hardware.camera.ccap@1.0-impl.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/hw/mt6789/vendor.mediatek.hardware.camera.isphal@1.0-impl.so:$(TARGET_COPY_OUT_VENDOR)/lib64/hw/mt6789/vendor.mediatek.hardware.camera.isphal@1.0-impl.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/hw/mt6789/vendor.mediatek.hardware.camera.isphal@1.1-impl.so:$(TARGET_COPY_OUT_VENDOR)/lib64/hw/mt6789/vendor.mediatek.hardware.camera.isphal@1.1-impl.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/hw/mt6789/vendor.mediatek.hardware.camera.lomoeffect@1.0-impl.so:$(TARGET_COPY_OUT_VENDOR)/lib64/hw/mt6789/vendor.mediatek.hardware.camera.lomoeffect@1.0-impl.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/hw/mt6789/vendor.mediatek.hardware.pq@2.15-impl.so:$(TARGET_COPY_OUT_VENDOR)/lib64/hw/mt6789/vendor.mediatek.hardware.pq@2.15-impl.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/hw/mt6789/vulkan.mali.so:$(TARGET_COPY_OUT_VENDOR)/lib64/hw/mt6789/vulkan.mali.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/hw/sensors.elliptic.so:$(TARGET_COPY_OUT_VENDOR)/lib64/hw/sensors.elliptic.so \
@@ -726,16 +736,453 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/hw/vendor.xiaomi.hardware.micharge@1.0-impl.so:$(TARGET_COPY_OUT_VENDOR)/lib64/hw/vendor.xiaomi.hardware.micharge@1.0-impl.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/hw/vendor.xiaomi.sensor.citsensorservice@2.0-impl.so:$(TARGET_COPY_OUT_VENDOR)/lib64/hw/vendor.xiaomi.sensor.citsensorservice@2.0-impl.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libAVCSecureVencCA.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libAVCSecureVencCA.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_gc16b3aacfrontmipiraw_3rd_party_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_gc16b3aacfrontmipiraw_3rd_party_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_gc16b3aacfrontmipiraw_3rd_party_Capture_mfnr.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_gc16b3aacfrontmipiraw_3rd_party_Capture_mfnr.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_gc16b3aacfrontmipiraw_3rd_party_Peview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_gc16b3aacfrontmipiraw_3rd_party_Peview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_gc16b3aacfrontmipiraw_Default_Capture_XTS.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_gc16b3aacfrontmipiraw_Default_Capture_XTS.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_gc16b3aacfrontmipiraw_Flash_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_gc16b3aacfrontmipiraw_Flash_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_gc16b3aacfrontmipiraw_Flash_Preview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_gc16b3aacfrontmipiraw_Flash_Preview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_gc16b3aacfrontmipiraw_HDR_Capture_EV_NEG.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_gc16b3aacfrontmipiraw_HDR_Capture_EV_NEG.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_gc16b3aacfrontmipiraw_HDR_Capture_EV_POS.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_gc16b3aacfrontmipiraw_HDR_Capture_EV_POS.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_gc16b3aacfrontmipiraw_HDR_Capture_EV_ZERO.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_gc16b3aacfrontmipiraw_HDR_Capture_EV_ZERO.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_gc16b3aacfrontmipiraw_LLHDR_Capture_EV0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_gc16b3aacfrontmipiraw_LLHDR_Capture_EV0.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_gc16b3aacfrontmipiraw_P1_YUV.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_gc16b3aacfrontmipiraw_P1_YUV.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_gc16b3aacfrontmipiraw_Panorama.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_gc16b3aacfrontmipiraw_Panorama.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_gc16b3aacfrontmipiraw_Portrait_Peview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_gc16b3aacfrontmipiraw_Portrait_Peview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_gc16b3aacfrontmipiraw_Scene_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_gc16b3aacfrontmipiraw_Scene_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_gc16b3aacfrontmipiraw_Scene_Preview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_gc16b3aacfrontmipiraw_Scene_Preview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_gc16b3aacfrontmipiraw_SlimVideo_720.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_gc16b3aacfrontmipiraw_SlimVideo_720.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_gc16b3aacfrontmipiraw_Supernight_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_gc16b3aacfrontmipiraw_Supernight_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_gc16b3aacfrontmipiraw_Supernight_Peview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_gc16b3aacfrontmipiraw_Supernight_Peview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_gc16b3aacfrontmipiraw_Video_1080_30fps.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_gc16b3aacfrontmipiraw_Video_1080_30fps.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_gc16b3aacfrontmipiraw_Video_1080_60fps.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_gc16b3aacfrontmipiraw_Video_1080_60fps.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_gc16b3aacfrontmipiraw_Video_720.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_gc16b3aacfrontmipiraw_Video_720.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_gc16b3ofilmfrontmipiraw_3rd_party_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_gc16b3ofilmfrontmipiraw_3rd_party_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_gc16b3ofilmfrontmipiraw_3rd_party_Capture_mfnr.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_gc16b3ofilmfrontmipiraw_3rd_party_Capture_mfnr.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_gc16b3ofilmfrontmipiraw_3rd_party_Peview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_gc16b3ofilmfrontmipiraw_3rd_party_Peview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_gc16b3ofilmfrontmipiraw_Default_Capture_XTS.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_gc16b3ofilmfrontmipiraw_Default_Capture_XTS.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_gc16b3ofilmfrontmipiraw_Flash_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_gc16b3ofilmfrontmipiraw_Flash_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_gc16b3ofilmfrontmipiraw_Flash_Preview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_gc16b3ofilmfrontmipiraw_Flash_Preview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_gc16b3ofilmfrontmipiraw_HDR_Capture_EV_NEG.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_gc16b3ofilmfrontmipiraw_HDR_Capture_EV_NEG.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_gc16b3ofilmfrontmipiraw_HDR_Capture_EV_POS.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_gc16b3ofilmfrontmipiraw_HDR_Capture_EV_POS.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_gc16b3ofilmfrontmipiraw_HDR_Capture_EV_ZERO.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_gc16b3ofilmfrontmipiraw_HDR_Capture_EV_ZERO.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_gc16b3ofilmfrontmipiraw_LLHDR_Capture_EV0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_gc16b3ofilmfrontmipiraw_LLHDR_Capture_EV0.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_gc16b3ofilmfrontmipiraw_P1_YUV.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_gc16b3ofilmfrontmipiraw_P1_YUV.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_gc16b3ofilmfrontmipiraw_Panorama.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_gc16b3ofilmfrontmipiraw_Panorama.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_gc16b3ofilmfrontmipiraw_Portrait_Peview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_gc16b3ofilmfrontmipiraw_Portrait_Peview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_gc16b3ofilmfrontmipiraw_Scene_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_gc16b3ofilmfrontmipiraw_Scene_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_gc16b3ofilmfrontmipiraw_Scene_Preview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_gc16b3ofilmfrontmipiraw_Scene_Preview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_gc16b3ofilmfrontmipiraw_SlimVideo_720.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_gc16b3ofilmfrontmipiraw_SlimVideo_720.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_gc16b3ofilmfrontmipiraw_Supernight_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_gc16b3ofilmfrontmipiraw_Supernight_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_gc16b3ofilmfrontmipiraw_Supernight_Peview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_gc16b3ofilmfrontmipiraw_Supernight_Peview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_gc16b3ofilmfrontmipiraw_Video_1080_30fps.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_gc16b3ofilmfrontmipiraw_Video_1080_30fps.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_gc16b3ofilmfrontmipiraw_Video_1080_60fps.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_gc16b3ofilmfrontmipiraw_Video_1080_60fps.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_gc16b3ofilmfrontmipiraw_Video_720.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_gc16b3ofilmfrontmipiraw_Video_720.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov02b10aacmacromipiraw_Flash_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov02b10aacmacromipiraw_Flash_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov02b10aacmacromipiraw_Flash_Capture_ZOOM.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov02b10aacmacromipiraw_Flash_Capture_ZOOM.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov02b10aacmacromipiraw_Scene_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov02b10aacmacromipiraw_Scene_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov02b10aacmacromipiraw_Scene_Preview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov02b10aacmacromipiraw_Scene_Preview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov02b10aacmacromipiraw_Video_720.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov02b10aacmacromipiraw_Video_720.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov02b10aacmacromipiraw_Video_720_ZOOM.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov02b10aacmacromipiraw_Video_720_ZOOM.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov02b10trulymacromipiraw_Flash_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov02b10trulymacromipiraw_Flash_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov02b10trulymacromipiraw_Flash_Capture_ZOOM.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov02b10trulymacromipiraw_Flash_Capture_ZOOM.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov02b10trulymacromipiraw_Scene_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov02b10trulymacromipiraw_Scene_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov02b10trulymacromipiraw_Scene_Preview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov02b10trulymacromipiraw_Scene_Preview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov02b10trulymacromipiraw_Video_720.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov02b10trulymacromipiraw_Video_720.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov02b10trulymacromipiraw_Video_720_ZOOM.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov02b10trulymacromipiraw_Video_720_ZOOM.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov08d10aacultramipiraw_Face_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov08d10aacultramipiraw_Face_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov08d10aacultramipiraw_Face_Preview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov08d10aacultramipiraw_Face_Preview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov08d10aacultramipiraw_Flash_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov08d10aacultramipiraw_Flash_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov08d10aacultramipiraw_Flash_Capture_AUTO.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov08d10aacultramipiraw_Flash_Capture_AUTO.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov08d10aacultramipiraw_HDR_Face_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov08d10aacultramipiraw_HDR_Face_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov08d10aacultramipiraw_HDR_Face_Capture_EV_N.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov08d10aacultramipiraw_HDR_Face_Capture_EV_N.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov08d10aacultramipiraw_HDR_Face_Capture_EV_P.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov08d10aacultramipiraw_HDR_Face_Capture_EV_P.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov08d10aacultramipiraw_HDR_Scene_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov08d10aacultramipiraw_HDR_Scene_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov08d10aacultramipiraw_HDR_Scene_Capture_EV_N.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov08d10aacultramipiraw_HDR_Scene_Capture_EV_N.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov08d10aacultramipiraw_HDR_Scene_Capture_EV_P.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov08d10aacultramipiraw_HDR_Scene_Capture_EV_P.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov08d10aacultramipiraw_LLHDR_Face_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov08d10aacultramipiraw_LLHDR_Face_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov08d10aacultramipiraw_LLHDR_Scene_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov08d10aacultramipiraw_LLHDR_Scene_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov08d10aacultramipiraw_Portrait_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov08d10aacultramipiraw_Portrait_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov08d10aacultramipiraw_Scene_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov08d10aacultramipiraw_Scene_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov08d10aacultramipiraw_Scene_Preview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov08d10aacultramipiraw_Scene_Preview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov08d10aacultramipiraw_SuperNightRaw_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov08d10aacultramipiraw_SuperNightRaw_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov08d10aacultramipiraw_SuperNightRaw_Preview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov08d10aacultramipiraw_SuperNightRaw_Preview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov08d10aacultramipiraw_Video_1080P.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov08d10aacultramipiraw_Video_1080P.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov08d10aacultramipiraw_Video_720P.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov08d10aacultramipiraw_Video_720P.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov08d10aacultramipiraw_Zoom1_Video_1080P.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov08d10aacultramipiraw_Zoom1_Video_1080P.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov08d10aacultramipiraw_Zoom1_Video_720P.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov08d10aacultramipiraw_Zoom1_Video_720P.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov08d10ofilmultramipiraw_Face_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov08d10ofilmultramipiraw_Face_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov08d10ofilmultramipiraw_Face_Preview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov08d10ofilmultramipiraw_Face_Preview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov08d10ofilmultramipiraw_Flash_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov08d10ofilmultramipiraw_Flash_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov08d10ofilmultramipiraw_Flash_Capture_AUTO.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov08d10ofilmultramipiraw_Flash_Capture_AUTO.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov08d10ofilmultramipiraw_HDR_Face_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov08d10ofilmultramipiraw_HDR_Face_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov08d10ofilmultramipiraw_HDR_Face_Capture_EV_N.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov08d10ofilmultramipiraw_HDR_Face_Capture_EV_N.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov08d10ofilmultramipiraw_HDR_Face_Capture_EV_P.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov08d10ofilmultramipiraw_HDR_Face_Capture_EV_P.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov08d10ofilmultramipiraw_HDR_Scene_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov08d10ofilmultramipiraw_HDR_Scene_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov08d10ofilmultramipiraw_HDR_Scene_Capture_EV_N.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov08d10ofilmultramipiraw_HDR_Scene_Capture_EV_N.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov08d10ofilmultramipiraw_HDR_Scene_Capture_EV_P.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov08d10ofilmultramipiraw_HDR_Scene_Capture_EV_P.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov08d10ofilmultramipiraw_LLHDR_Face_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov08d10ofilmultramipiraw_LLHDR_Face_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov08d10ofilmultramipiraw_LLHDR_Scene_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov08d10ofilmultramipiraw_LLHDR_Scene_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov08d10ofilmultramipiraw_Portrait_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov08d10ofilmultramipiraw_Portrait_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov08d10ofilmultramipiraw_Scene_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov08d10ofilmultramipiraw_Scene_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov08d10ofilmultramipiraw_Scene_Preview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov08d10ofilmultramipiraw_Scene_Preview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov08d10ofilmultramipiraw_SuperNightRaw_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov08d10ofilmultramipiraw_SuperNightRaw_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov08d10ofilmultramipiraw_SuperNightRaw_Preview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov08d10ofilmultramipiraw_SuperNightRaw_Preview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov08d10ofilmultramipiraw_Video_1080P.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov08d10ofilmultramipiraw_Video_1080P.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov08d10ofilmultramipiraw_Video_720P.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov08d10ofilmultramipiraw_Video_720P.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov08d10ofilmultramipiraw_Zoom1_Video_1080P.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov08d10ofilmultramipiraw_Zoom1_Video_1080P.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov08d10ofilmultramipiraw_Zoom1_Video_720P.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov08d10ofilmultramipiraw_Zoom1_Video_720P.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qaacfrontmipiraw_3rd_party_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qaacfrontmipiraw_3rd_party_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qaacfrontmipiraw_3rd_party_Peview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qaacfrontmipiraw_3rd_party_Peview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qaacfrontmipiraw_Default_Capture_XTS.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qaacfrontmipiraw_Default_Capture_XTS.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qaacfrontmipiraw_Facebook_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qaacfrontmipiraw_Facebook_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qaacfrontmipiraw_Facebook_Preview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qaacfrontmipiraw_Facebook_Preview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qaacfrontmipiraw_Flash_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qaacfrontmipiraw_Flash_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qaacfrontmipiraw_HDR_Capture_EV_NEG.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qaacfrontmipiraw_HDR_Capture_EV_NEG.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qaacfrontmipiraw_HDR_Capture_EV_POS.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qaacfrontmipiraw_HDR_Capture_EV_POS.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qaacfrontmipiraw_HDR_Capture_EV_ZERO.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qaacfrontmipiraw_HDR_Capture_EV_ZERO.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qaacfrontmipiraw_LLHDR_Capture_EV0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qaacfrontmipiraw_LLHDR_Capture_EV0.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qaacfrontmipiraw_Line_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qaacfrontmipiraw_Line_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qaacfrontmipiraw_Line_Preview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qaacfrontmipiraw_Line_Preview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qaacfrontmipiraw_P1_YUV.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qaacfrontmipiraw_P1_YUV.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qaacfrontmipiraw_Panorama.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qaacfrontmipiraw_Panorama.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qaacfrontmipiraw_Portrait_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qaacfrontmipiraw_Portrait_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qaacfrontmipiraw_Portrait_Peview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qaacfrontmipiraw_Portrait_Peview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qaacfrontmipiraw_QQ_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qaacfrontmipiraw_QQ_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qaacfrontmipiraw_QQ_Preview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qaacfrontmipiraw_QQ_Preview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qaacfrontmipiraw_Scene_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qaacfrontmipiraw_Scene_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qaacfrontmipiraw_Scene_Preview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qaacfrontmipiraw_Scene_Preview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qaacfrontmipiraw_ShortVideo_1080.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qaacfrontmipiraw_ShortVideo_1080.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qaacfrontmipiraw_ShortVideo_720.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qaacfrontmipiraw_ShortVideo_720.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qaacfrontmipiraw_Skype_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qaacfrontmipiraw_Skype_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qaacfrontmipiraw_Skype_Preview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qaacfrontmipiraw_Skype_Preview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qaacfrontmipiraw_SlimVideo_720.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qaacfrontmipiraw_SlimVideo_720.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qaacfrontmipiraw_Supernight_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qaacfrontmipiraw_Supernight_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qaacfrontmipiraw_Supernight_Peview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qaacfrontmipiraw_Supernight_Peview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qaacfrontmipiraw_Video_1080_30fps.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qaacfrontmipiraw_Video_1080_30fps.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qaacfrontmipiraw_Video_1080_60fps.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qaacfrontmipiraw_Video_1080_60fps.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qaacfrontmipiraw_Video_720.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qaacfrontmipiraw_Video_720.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qaacfrontmipiraw_Wechat_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qaacfrontmipiraw_Wechat_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qaacfrontmipiraw_Wechat_Preview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qaacfrontmipiraw_Wechat_Preview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qaacfrontmipiraw_xm_HDCamera_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qaacfrontmipiraw_xm_HDCamera_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qaacfrontmipiraw_xm_HDCamera_Peview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qaacfrontmipiraw_xm_HDCamera_Peview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qaacfrontmipiraw_xm_Instagram_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qaacfrontmipiraw_xm_Instagram_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qaacfrontmipiraw_xm_Instagram_Peview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qaacfrontmipiraw_xm_Instagram_Peview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qaacfrontmipiraw_xm_Snapchat_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qaacfrontmipiraw_xm_Snapchat_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qaacfrontmipiraw_xm_Snapchat_Peview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qaacfrontmipiraw_xm_Snapchat_Peview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qaacfrontmipiraw_xm_TikTok_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qaacfrontmipiraw_xm_TikTok_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qaacfrontmipiraw_xm_TikTok_Peview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qaacfrontmipiraw_xm_TikTok_Peview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qaacfrontmipiraw_xm_Twitter_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qaacfrontmipiraw_xm_Twitter_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qaacfrontmipiraw_xm_Twitter_Peview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qaacfrontmipiraw_xm_Twitter_Peview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qaacfrontmipiraw_xm_Zalo_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qaacfrontmipiraw_xm_Zalo_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qaacfrontmipiraw_xm_Zalo_Peview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qaacfrontmipiraw_xm_Zalo_Peview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qofilmfrontmipiraw_3rd_party_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qofilmfrontmipiraw_3rd_party_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qofilmfrontmipiraw_3rd_party_Capture_mfnr.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qofilmfrontmipiraw_3rd_party_Capture_mfnr.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qofilmfrontmipiraw_3rd_party_Peview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qofilmfrontmipiraw_3rd_party_Peview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qofilmfrontmipiraw_Default_Capture_XTS.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qofilmfrontmipiraw_Default_Capture_XTS.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qofilmfrontmipiraw_Flash_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qofilmfrontmipiraw_Flash_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qofilmfrontmipiraw_Flash_Preview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qofilmfrontmipiraw_Flash_Preview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qofilmfrontmipiraw_HDR_Capture_EV_NEG.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qofilmfrontmipiraw_HDR_Capture_EV_NEG.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qofilmfrontmipiraw_HDR_Capture_EV_POS.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qofilmfrontmipiraw_HDR_Capture_EV_POS.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qofilmfrontmipiraw_HDR_Capture_EV_ZERO.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qofilmfrontmipiraw_HDR_Capture_EV_ZERO.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qofilmfrontmipiraw_LLHDR_Capture_EV0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qofilmfrontmipiraw_LLHDR_Capture_EV0.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qofilmfrontmipiraw_P1_YUV.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qofilmfrontmipiraw_P1_YUV.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qofilmfrontmipiraw_Panorama.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qofilmfrontmipiraw_Panorama.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qofilmfrontmipiraw_Portrait_Peview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qofilmfrontmipiraw_Portrait_Peview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qofilmfrontmipiraw_Scene_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qofilmfrontmipiraw_Scene_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qofilmfrontmipiraw_Scene_Preview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qofilmfrontmipiraw_Scene_Preview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qofilmfrontmipiraw_SlimVideo_720.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qofilmfrontmipiraw_SlimVideo_720.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qofilmfrontmipiraw_Supernight_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qofilmfrontmipiraw_Supernight_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qofilmfrontmipiraw_Supernight_Peview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qofilmfrontmipiraw_Supernight_Peview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qofilmfrontmipiraw_Video_1080_30fps.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qofilmfrontmipiraw_Video_1080_30fps.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qofilmfrontmipiraw_Video_1080_60fps.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qofilmfrontmipiraw_Video_1080_60fps.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov16a1qofilmfrontmipiraw_Video_720.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov16a1qofilmfrontmipiraw_Video_720.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_3rd_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_3rd_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_3rd_Capture_MFNR.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_3rd_Capture_MFNR.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_3rd_Preview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_3rd_Preview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_3rd_Video.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_3rd_Video.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_Capture_Face_professional.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_Capture_Face_professional.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_Capture_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_Capture_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_Capture_Zoom2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_Capture_Zoom2.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_Capture_portrait.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_Capture_portrait.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_Capture_professional.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_Capture_professional.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_Capture_professional_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_Capture_professional_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_Capture_professional_Zoom2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_Capture_professional_Zoom2.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_Capture_superNS.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_Capture_superNS.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_Capture_superNS_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_Capture_superNS_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_Capture_superNS_Zoom2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_Capture_superNS_Zoom2.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_Default_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_Default_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_Default_Capture_XTS.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_Default_Capture_XTS.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_Default_Preview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_Default_Preview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_Default_Video.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_Default_Video.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_Face_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_Face_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_Face_Capture_64M.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_Face_Capture_64M.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_Face_Capture_64M_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_Face_Capture_64M_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_Face_Preview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_Face_Preview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_Face_Preview_64M.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_Face_Preview_64M.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_Face_Preview_64M_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_Face_Preview_64M_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_Flash_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_Flash_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_Flash_Capture_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_Flash_Capture_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_Flash_Capture_Zoom2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_Flash_Capture_Zoom2.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_Flash_Preview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_Flash_Preview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_HDR_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_HDR_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_HDR_Capture_NEGATIVE.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_HDR_Capture_NEGATIVE.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_HDR_Capture_POSITIVE.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_HDR_Capture_POSITIVE.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_HDR_Face_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_HDR_Face_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_HDR_Face_Capture_NEGATIVE.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_HDR_Face_Capture_NEGATIVE.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_HDR_Face_Capture_POSITIVE.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_HDR_Face_Capture_POSITIVE.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_LLHDR_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_LLHDR_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_LLHDR_Face_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_LLHDR_Face_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_N3D_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_N3D_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_N3D_Preview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_N3D_Preview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_N3D_Video.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_N3D_Video.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_Preview_Face_professional.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_Preview_Face_professional.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_Preview_Vlog.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_Preview_Vlog.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_Preview_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_Preview_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_Preview_Zoom2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_Preview_Zoom2.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_Preview_panorama.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_Preview_panorama.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_Preview_portrait.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_Preview_portrait.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_Preview_professional.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_Preview_professional.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_Preview_professional_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_Preview_professional_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_Preview_professional_Zoom2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_Preview_professional_Zoom2.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_Preview_superNS.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_Preview_superNS.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_Preview_superNS_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_Preview_superNS_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_Preview_superNS_Zoom2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_Preview_superNS_Zoom2.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_Scanner_Preview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_Scanner_Preview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_Scene_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_Scene_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_Scene_Capture_64M.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_Scene_Capture_64M.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_Scene_Capture_64M_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_Scene_Capture_64M_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_Scene_Preview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_Scene_Preview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_Scene_Preview_64M.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_Scene_Preview_64M.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_Scene_Preview_64M_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_Scene_Preview_64M_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_Video_1080.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_Video_1080.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_Video_1080_30_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_Video_1080_30_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_Video_1080_30_Zoom2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_Video_1080_30_Zoom2.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_Video_1080_60.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_Video_1080_60.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_Video_1080_60_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_Video_1080_60_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_Video_1080_60_Zoom2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_Video_1080_60_Zoom2.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_Video_720_120.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_Video_720_120.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_Video_720_120_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_Video_720_120_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_Video_720_120_Zoom2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_Video_720_120_Zoom2.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_Video_720_30.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_Video_720_30.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_Video_720_30_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_Video_720_30_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_ov64b40sunnymainmipiraw_Video_720_30_Zoom2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_ov64b40sunnymainmipiraw_Video_720_30_Zoom2.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_3rd_Party_MFNR_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_3rd_Party_MFNR_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_3rd_Party_camera_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_3rd_Party_camera_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_3rd_Party_camera_Preview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_3rd_Party_camera_Preview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_Capture_200M_Remosaic.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_Capture_200M_Remosaic.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_Capture_200M_Remosaic_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_Capture_200M_Remosaic_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_Capture_Face_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_Capture_Face_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_Capture_Face_Zoom2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_Capture_Face_Zoom2.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_Capture_Face_portrait.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_Capture_Face_portrait.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_Capture_Face_professional.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_Capture_Face_professional.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_Capture_SE.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_Capture_SE.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_Capture_SE_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_Capture_SE_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_Capture_SE_Zoom2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_Capture_SE_Zoom2.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_Capture_Scene_portrait.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_Capture_Scene_portrait.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_Capture_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_Capture_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_Capture_Zoom2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_Capture_Zoom2.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_Capture_professional.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_Capture_professional.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_Capture_professional_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_Capture_professional_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_Capture_professional_Zoom2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_Capture_professional_Zoom2.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_Capture_superNS.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_Capture_superNS.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_Capture_superNS_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_Capture_superNS_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_Capture_superNS_Zoom2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_Capture_superNS_Zoom2.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_Default_Capture_XTS.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_Default_Capture_XTS.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_Default_Preview_XTS.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_Default_Preview_XTS.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_Face_200M_Remosaic.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_Face_200M_Remosaic.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_Face_200M_Remosaic_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_Face_200M_Remosaic_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_Face_Capture_200M.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_Face_Capture_200M.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_Face_Capture_200M_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_Face_Capture_200M_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_Face_Preview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_Face_Preview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_Face_Preview_200M.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_Face_Preview_200M.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_HDR_EV0_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_HDR_EV0_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_HDR_EV_Neg_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_HDR_EV_Neg_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_HDR_EV_Pos_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_HDR_EV_Pos_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_LLHDR_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_LLHDR_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_Preview_Face_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_Preview_Face_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_Preview_Face_Zoom2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_Preview_Face_Zoom2.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_Preview_Face_professional.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_Preview_Face_professional.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_Preview_Vlog.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_Preview_Vlog.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_Preview_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_Preview_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_Preview_Zoom2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_Preview_Zoom2.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_Preview_panorama.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_Preview_panorama.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_Preview_portrait.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_Preview_portrait.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_Preview_professional.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_Preview_professional.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_Preview_professional_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_Preview_professional_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_Preview_professional_Zoom2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_Preview_professional_Zoom2.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_Preview_superNS.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_Preview_superNS.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_Preview_superNS_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_Preview_superNS_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_Preview_superNS_Zoom2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_Preview_superNS_Zoom2.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_Scanner_Preview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_Scanner_Preview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_Scene_Capture_200M.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_Scene_Capture_200M.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_Scene_Capture_200M_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_Scene_Capture_200M_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_Scene_Preview_200M.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_Scene_Preview_200M.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_Video_1080_30_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_Video_1080_30_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_Video_1080_30_Zoom2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_Video_1080_30_Zoom2.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_Video_1080_60.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_Video_1080_60.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_Video_1080_60_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_Video_1080_60_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_Video_1080_60_Zoom2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_Video_1080_60_Zoom2.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_Video_720_120.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_Video_720_120.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_Video_720_120_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_Video_720_120_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_Video_720_120_Zoom2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_Video_720_120_Zoom2.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_Video_720_30.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_Video_720_30.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_Video_720_30_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_Video_720_30_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3ofilmmainmipiraw_Video_720_30_Zoom2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3ofilmmainmipiraw_Video_720_30_Zoom2.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_3rd_Party_MFNR_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_3rd_Party_MFNR_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_3rd_Party_camera_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_3rd_Party_camera_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_3rd_Party_camera_Preview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_3rd_Party_camera_Preview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_Capture_200M_Remosaic.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_Capture_200M_Remosaic.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_Capture_200M_Remosaic_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_Capture_200M_Remosaic_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_Capture_Face_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_Capture_Face_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_Capture_Face_Zoom2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_Capture_Face_Zoom2.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_Capture_Face_portrait.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_Capture_Face_portrait.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_Capture_Face_professional.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_Capture_Face_professional.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_Capture_SE.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_Capture_SE.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_Capture_SE_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_Capture_SE_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_Capture_SE_Zoom2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_Capture_SE_Zoom2.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_Capture_Scene_portrait.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_Capture_Scene_portrait.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_Capture_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_Capture_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_Capture_Zoom2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_Capture_Zoom2.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_Capture_professional.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_Capture_professional.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_Capture_professional_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_Capture_professional_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_Capture_professional_Zoom2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_Capture_professional_Zoom2.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_Capture_superNS.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_Capture_superNS.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_Capture_superNS_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_Capture_superNS_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_Capture_superNS_Zoom2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_Capture_superNS_Zoom2.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_Default_Capture_XTS.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_Default_Capture_XTS.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_Default_Preview_XTS.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_Default_Preview_XTS.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_Face_200M_Remosaic.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_Face_200M_Remosaic.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_Face_200M_Remosaic_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_Face_200M_Remosaic_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_Face_Capture_200M.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_Face_Capture_200M.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_Face_Capture_200M_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_Face_Capture_200M_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_Face_Preview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_Face_Preview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_Face_Preview_200M.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_Face_Preview_200M.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_HDR_EV0_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_HDR_EV0_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_HDR_EV_Neg_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_HDR_EV_Neg_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_HDR_EV_Pos_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_HDR_EV_Pos_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_LLHDR_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_LLHDR_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_Preview_Face_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_Preview_Face_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_Preview_Face_Zoom2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_Preview_Face_Zoom2.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_Preview_Face_professional.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_Preview_Face_professional.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_Preview_Vlog.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_Preview_Vlog.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_Preview_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_Preview_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_Preview_Zoom2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_Preview_Zoom2.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_Preview_panorama.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_Preview_panorama.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_Preview_portrait.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_Preview_portrait.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_Preview_professional.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_Preview_professional.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_Preview_professional_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_Preview_professional_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_Preview_professional_Zoom2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_Preview_professional_Zoom2.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_Preview_superNS.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_Preview_superNS.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_Preview_superNS_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_Preview_superNS_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_Preview_superNS_Zoom2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_Preview_superNS_Zoom2.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_Scanner_Preview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_Scanner_Preview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_Scene_Capture_200M.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_Scene_Capture_200M.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_Scene_Capture_200M_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_Scene_Capture_200M_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_Scene_Preview_200M.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_Scene_Preview_200M.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_Video_1080_30_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_Video_1080_30_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_Video_1080_30_Zoom2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_Video_1080_30_Zoom2.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_Video_1080_60.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_Video_1080_60.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_Video_1080_60_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_Video_1080_60_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_Video_1080_60_Zoom2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_Video_1080_60_Zoom2.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_Video_720_120.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_Video_720_120.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_Video_720_120_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_Video_720_120_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_Video_720_120_Zoom2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_Video_720_120_Zoom2.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_Video_720_30.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_Video_720_30.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_Video_720_30_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_Video_720_30_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khp3samsungmainmipiraw_Video_720_30_Zoom2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khp3samsungmainmipiraw_Video_720_30_Zoom2.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_3rd_Party_MFNR_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_3rd_Party_MFNR_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_3rd_Party_camera_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_3rd_Party_camera_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_3rd_Party_camera_Preview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_3rd_Party_camera_Preview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Capture_200M_Remosaic.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Capture_200M_Remosaic.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Capture_200M_Remosaic_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Capture_200M_Remosaic_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Capture_Face_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Capture_Face_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Capture_Face_Zoom2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Capture_Face_Zoom2.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Capture_Face_portrait.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Capture_Face_portrait.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Capture_Face_professional.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Capture_Face_professional.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Capture_SE.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Capture_SE.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Capture_SE_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Capture_SE_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Capture_SE_Zoom2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Capture_SE_Zoom2.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Capture_Scene_portrait.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Capture_Scene_portrait.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Capture_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Capture_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Capture_Zoom2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Capture_Zoom2.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Capture_professional.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Capture_professional.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Capture_professional_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Capture_professional_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Capture_professional_Zoom2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Capture_professional_Zoom2.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Capture_superNS.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Capture_superNS.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Capture_superNS_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Capture_superNS_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Capture_superNS_Zoom2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Capture_superNS_Zoom2.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Default_Capture_XTS.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Default_Capture_XTS.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Default_Preview_XTS.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Default_Preview_XTS.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Face_200M_Remosaic.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Face_200M_Remosaic.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Face_200M_Remosaic_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Face_200M_Remosaic_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Face_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Face_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Face_Capture_200M.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Face_Capture_200M.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Face_Capture_200M_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Face_Capture_200M_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Face_Preview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Face_Preview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Face_Preview_200M.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Face_Preview_200M.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Flash_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Flash_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_HDR_EV0_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_HDR_EV0_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_HDR_EV_Neg_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_HDR_EV_Neg_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_HDR_EV_Pos_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_HDR_EV_Pos_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_LLHDR_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_LLHDR_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_N3D_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_N3D_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_N3D_Preview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_N3D_Preview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_N3D_Video.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_N3D_Video.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_P1_YUV.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_P1_YUV.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Preview_Face_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Preview_Face_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Preview_Face_Zoom2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Preview_Face_Zoom2.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Preview_Face_professional.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Preview_Face_professional.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Preview_Vlog.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Preview_Vlog.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Preview_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Preview_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Preview_Zoom2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Preview_Zoom2.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Preview_panorama.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Preview_panorama.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Preview_portrait.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Preview_portrait.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Preview_professional.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Preview_professional.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Preview_professional_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Preview_professional_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Preview_professional_Zoom2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Preview_professional_Zoom2.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Preview_superNS.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Preview_superNS.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Preview_superNS_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Preview_superNS_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Preview_superNS_Zoom2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Preview_superNS_Zoom2.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Scanner_Preview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Scanner_Preview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Scene_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Scene_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Scene_Capture_200M.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Scene_Capture_200M.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Scene_Capture_200M_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Scene_Capture_200M_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Scene_Preview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Scene_Preview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Scene_Preview_200M.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Scene_Preview_200M.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Video_1080.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Video_1080.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Video_1080_30_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Video_1080_30_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Video_1080_30_Zoom2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Video_1080_30_Zoom2.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Video_1080_60.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Video_1080_60.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Video_1080_60_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Video_1080_60_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Video_1080_60_Zoom2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Video_1080_60_Zoom2.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Video_720_120.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Video_720_120.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Video_720_120_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Video_720_120_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Video_720_120_Zoom2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Video_720_120_Zoom2.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Video_720_30.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Video_720_30.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Video_720_30_Zoom1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Video_720_30_Zoom1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libCamera_s5khpxsunnymainmipiraw_Video_720_30_Zoom2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libCamera_s5khpxsunnymainmipiraw_Video_720_30_Zoom2.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libDefaultFpsActor.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libDefaultFpsActor.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libFrameRecord.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libFrameRecord.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libJpgEncPipe.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libJpgEncPipe.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libMiVideoFilter.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libMiVideoFilter.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libNoFpsActor.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libNoFpsActor.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libOpenCL.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libOpenCL.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libSQLiteModule_VER_ALL.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libSQLiteModule_VER_ALL.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libTEECommon.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libTEECommon.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libTrueSight.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libTrueSight.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libaal_cust.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libaal_cust.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libaal_key.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libaal_key.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libaal_mtk.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libaal_mtk.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libadpcmdec_mtk.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libadpcmdec_mtk.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libaedv.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libaedv.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libanc_dc_base.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libanc_dc_base.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libanc_hdr.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libanc_hdr.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libanc_hdr_adapter_AncSuperNightLite.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libanc_hdr_adapter_AncSuperNightLite.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libanc_night.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libanc_night.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libanc_night_preview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libanc_night_preview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libanc_single_bokeh.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libanc_single_bokeh.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libanc_single_rt_bokeh.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libanc_single_rt_bokeh.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libapu_mdw.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libapu_mdw.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libapu_mdw_batch.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libapu_mdw_batch.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libapusys.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libapusys.so \
@@ -761,6 +1208,21 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libbluetooth_mtk_pure.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libbluetooth_mtk_pure.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libbt-vendor.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libbt-vendor.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libbwc.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libbwc.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libc++_shared.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libc++_shared.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libcam.seninfn3d.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libcam.seninfn3d.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libcamalgo.3dnr.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libcamalgo.3dnr.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libcamalgo.dngop.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libcamalgo.dngop.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libcamalgo.eis.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libcamalgo.eis.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libcamalgo.fdft.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libcamalgo.fdft.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libcamalgo.fsc.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libcamalgo.fsc.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libcamalgo.gyro.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libcamalgo.gyro.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libcamalgo.lmv.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libcamalgo.lmv.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libcamalgo.n3d.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libcamalgo.n3d.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libcamalgo.nr.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libcamalgo.nr.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libcamalgo.platform.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libcamalgo.platform.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libcamalgo.utility.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libcamalgo.utility.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libcamalgo.warp.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libcamalgo.warp.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libcamera_scene.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libcamera_scene.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libcapctrl.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libcapctrl.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libcares_naptr.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libcares_naptr.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libcarrierconfig.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libcarrierconfig.so \
@@ -778,6 +1240,7 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libcodec2_soft_mtk_msadpcmdec.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libcodec2_soft_mtk_msadpcmdec.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libcodec2_vpp_qt_plugin.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libcodec2_vpp_qt_plugin.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libcodec2_vpp_rs_plugin.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libcodec2_vpp_rs_plugin.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libcom.xiaomi.pluginutils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libcom.xiaomi.pluginutils.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libcomposer_ext.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libcomposer_ext.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libconnfem.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libconnfem.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libcustom_nvram.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libcustom_nvram.so \
@@ -794,33 +1257,55 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libgralloctypes_mtk.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libgralloctypes_mtk.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libgz_gp_client.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libgz_gp_client.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libgz_uree.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libgz_uree.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libheichal.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libheichal.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libhfmanager.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libhfmanager.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libhfmanagerwrapper.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libhfmanagerwrapper.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libhwm.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libhwm.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libifcutils_mtk.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libifcutils_mtk.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libimagebuffer_wrapper.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libimagebuffer_wrapper.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libion_mtk.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libion_mtk.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libion_ulit.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libion_ulit.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libipsec_ims_shr.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libipsec_ims_shr.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libjpeg-alpha-oal_vendor.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libjpeg-alpha-oal_vendor.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libjpeg-alpha_vendor.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libjpeg-alpha_vendor.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libksensor.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libksensor.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libladder.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libladder.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libmfido_mitee.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libmfido_mitee.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libmi_bokehpre.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libmi_bokehpre.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libmialgo_ai_vision.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libmialgo_ai_vision.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libmialgo_sd.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libmialgo_sd.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libmialgo_utils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libmialgo_utils.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libmialgoengine.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libmialgoengine.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libmialgoengine2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libmialgoengine2.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libmipc.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libmipc.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libmlipay_mitee.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libmlipay_mitee.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libmlipay_mitee@1.1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libmlipay_mitee@1.1.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libmmagent.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libmmagent.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libmml.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libmml.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libmnetlink_v104.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libmnetlink_v104.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libmorpho_HDSR.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libmorpho_HDSR.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libmorpho_HdrChecker.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libmorpho_HdrChecker.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libmorpho_ImageRefiner.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libmorpho_ImageRefiner.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libmorpho_ImageRefinerLite.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libmorpho_ImageRefinerLite.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libmorpho_Ldc.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libmorpho_Ldc.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libmorpho_MFNR.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libmorpho_MFNR.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libmorpho_ldc_preview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libmorpho_ldc_preview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libmorpho_video_stabilizer.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libmorpho_video_stabilizer.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libmp3dec_mtk.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libmp3dec_mtk.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libmpbase.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libmpbase.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libmsbc_mtk.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libmsbc_mtk.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libmt_mitee.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libmt_mitee.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libmt_mitee@1.3.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libmt_mitee@1.3.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libmtk-fusion-ril-prop-vsim.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libmtk-fusion-ril-prop-vsim.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libmtk-ril.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libmtk-ril.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libmtkares.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libmtkares.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libmtkcam.MITPS.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libmtkcam.MITPS.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libmtkcam_pipelinepolicy-aov.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libmtkcam_pipelinepolicy-aov.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libmtkconfig.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libmtkconfig.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libmtkconfigutils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libmtkconfigutils.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libmtkcutils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libmtkcutils.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libmtkhardware_legacy.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libmtkhardware_legacy.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libmtkisp_metadata.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libmtkisp_metadata.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libmtklimiter_vendor.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libmtklimiter_vendor.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libmtkmipc-ril.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libmtkmipc-ril.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libmtknetcap.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libmtknetcap.so \
@@ -851,6 +1336,7 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libmvpuop_mtk_nn.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libmvpuop_mtk_nn.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libneuron_graph_delegate.mtk.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libneuron_graph_delegate.mtk.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libneuron_platform.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libneuron_platform.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libneuron_runtime.6.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libneuron_runtime.6.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libnir_neon_driver_ndk.mtk.vndk.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libnir_neon_driver_ndk.mtk.vndk.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libnotifyaudiohal.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libnotifyaudiohal.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libnpagent.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libnpagent.so \
@@ -866,6 +1352,8 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libpqframework.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libpqframework.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libprotobuf-cpp-lite-3.9.1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libprotobuf-cpp-lite-3.9.1.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libratconfig.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libratconfig.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libremosaic_wrapper.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libremosaic_wrapper.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libremosaiclib.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libremosaiclib.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/librgbwlightsensor.so:$(TARGET_COPY_OUT_VENDOR)/lib64/librgbwlightsensor.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/librilfusion.so:$(TARGET_COPY_OUT_VENDOR)/lib64/librilfusion.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/librpc.so:$(TARGET_COPY_OUT_VENDOR)/lib64/librpc.so \
@@ -884,6 +1372,7 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libtranslator_mdmi_v2.8.2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libtranslator_mdmi_v2.8.2.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libtranslator_utils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libtranslator_utils.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libtrm.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libtrm.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libudf.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libudf.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libvcodec_oal.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libvcodec_oal.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libvcodecdrv_header_stub.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libvcodecdrv_header_stub.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libverno.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libverno.so \
@@ -896,19 +1385,213 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libvow_ap_test_hh.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libvow_ap_test_hh.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libvow_ap_test_nn.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libvow_ap_test_nn.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libvpu.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libvpu.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libwa_dof.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libwa_dof.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/libwa_rtdof.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libwa_rtdof.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libwifi-hal-mtk.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libwifi-hal-mtk.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libwpfa.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libwpfa.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libwvhidl.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libwvhidl.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/libwvkeybox.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libwvkeybox.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/mediadrm/libwvdrmengine.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mediadrm/libwvdrmengine.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/arm.graphics-V1-ndk_platform.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/arm.graphics-V1-ndk_platform.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/gc16b3_aac_front_mipi_raw_IdxMgr.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/gc16b3_aac_front_mipi_raw_IdxMgr.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/gc16b3_aac_front_mipi_raw_tuning.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/gc16b3_aac_front_mipi_raw_tuning.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/gc16b3_ofilm_front_mipi_raw_IdxMgr.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/gc16b3_ofilm_front_mipi_raw_IdxMgr.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/gc16b3_ofilm_front_mipi_raw_tuning.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/gc16b3_ofilm_front_mipi_raw_tuning.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/lib3a.ae.core.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/lib3a.ae.core.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/lib3a.ae.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/lib3a.ae.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/lib3a.ae.stat.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/lib3a.ae.stat.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/lib3a.af.assist.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/lib3a.af.assist.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/lib3a.af.assist.utils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/lib3a.af.assist.utils.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/lib3a.af.core.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/lib3a.af.core.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/lib3a.af.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/lib3a.af.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/lib3a.alsflicker.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/lib3a.alsflicker.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/lib3a.awb.core.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/lib3a.awb.core.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/lib3a.ccudrv.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/lib3a.ccudrv.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/lib3a.ccuif.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/lib3a.ccuif.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/lib3a.custom.ae.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/lib3a.custom.ae.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/lib3a.dce.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/lib3a.dce.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/lib3a.flash.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/lib3a.flash.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/lib3a.flicker.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/lib3a.flicker.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/lib3a.gma.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/lib3a.gma.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/lib3a.lce.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/lib3a.lce.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/lib3a.log.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/lib3a.log.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/lib3a.n3d3a.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/lib3a.n3d3a.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/lib3a.sensors.color.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/lib3a.sensors.color.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/lib3a.sensors.flicker.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/lib3a.sensors.flicker.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libCamera_s5khp3ofilmmainmipiraw_Face_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libCamera_s5khp3ofilmmainmipiraw_Face_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libCamera_s5khp3ofilmmainmipiraw_Flash_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libCamera_s5khp3ofilmmainmipiraw_Flash_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libCamera_s5khp3ofilmmainmipiraw_N3D_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libCamera_s5khp3ofilmmainmipiraw_N3D_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libCamera_s5khp3ofilmmainmipiraw_N3D_Preview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libCamera_s5khp3ofilmmainmipiraw_N3D_Preview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libCamera_s5khp3ofilmmainmipiraw_N3D_Video.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libCamera_s5khp3ofilmmainmipiraw_N3D_Video.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libCamera_s5khp3ofilmmainmipiraw_P1_YUV.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libCamera_s5khp3ofilmmainmipiraw_P1_YUV.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libCamera_s5khp3ofilmmainmipiraw_Scene_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libCamera_s5khp3ofilmmainmipiraw_Scene_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libCamera_s5khp3ofilmmainmipiraw_Scene_Preview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libCamera_s5khp3ofilmmainmipiraw_Scene_Preview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libCamera_s5khp3ofilmmainmipiraw_Video_1080.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libCamera_s5khp3ofilmmainmipiraw_Video_1080.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libCamera_s5khp3samsungmainmipiraw_Face_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libCamera_s5khp3samsungmainmipiraw_Face_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libCamera_s5khp3samsungmainmipiraw_Flash_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libCamera_s5khp3samsungmainmipiraw_Flash_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libCamera_s5khp3samsungmainmipiraw_N3D_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libCamera_s5khp3samsungmainmipiraw_N3D_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libCamera_s5khp3samsungmainmipiraw_N3D_Preview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libCamera_s5khp3samsungmainmipiraw_N3D_Preview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libCamera_s5khp3samsungmainmipiraw_N3D_Video.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libCamera_s5khp3samsungmainmipiraw_N3D_Video.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libCamera_s5khp3samsungmainmipiraw_P1_YUV.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libCamera_s5khp3samsungmainmipiraw_P1_YUV.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libCamera_s5khp3samsungmainmipiraw_Scene_Capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libCamera_s5khp3samsungmainmipiraw_Scene_Capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libCamera_s5khp3samsungmainmipiraw_Scene_Preview.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libCamera_s5khp3samsungmainmipiraw_Scene_Preview.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libCamera_s5khp3samsungmainmipiraw_Video_1080.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libCamera_s5khp3samsungmainmipiraw_Video_1080.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libDR.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libDR.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libSonyIMX230PdafLibrary.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libSonyIMX230PdafLibrary.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libSonyIMX230PdafLibraryWrapper.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libSonyIMX230PdafLibraryWrapper.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libSonyIMX338PdafLibrary.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libSonyIMX338PdafLibrary.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libSonyIMX338PdafLibraryWrapper.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libSonyIMX338PdafLibraryWrapper.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libSonyIMX386PdafLibrary.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libSonyIMX386PdafLibrary.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libSonyIMX386PdafLibraryWrapper.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libSonyIMX386PdafLibraryWrapper.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libSonyIMX519PdafLibrary.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libSonyIMX519PdafLibrary.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libSonyIMX519PdafLibraryWrapper.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libSonyIMX519PdafLibraryWrapper.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libaaa_ltm.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libaaa_ltm.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libaaa_ltmx.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libaaa_ltmx.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libaal_cust_func.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libaal_cust_func.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libaalservice.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libaalservice.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libacdk.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libacdk.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libaiawb_moon.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libaiawb_moon.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libaiawb_p1ggm.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libaiawb_p1ggm.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libaiawb_sun.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libaiawb_sun.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libaibc_tuning.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libaibc_tuning.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libaibc_tuning_p2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libaibc_tuning_p2.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libaibc_tuning_p3.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libaibc_tuning_p3.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libaibc_tuning_p4.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libaibc_tuning_p4.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libaidepth_tuning.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libaidepth_tuning.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libaiselector.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libaiselector.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libcam.afhal.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libcam.afhal.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libcam.chdr.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libcam.chdr.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libcam.feature_utils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libcam.feature_utils.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libcam.hal3a.cctsvr.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libcam.hal3a.cctsvr.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libcam.hal3a.log.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libcam.hal3a.log.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libcam.hal3a.v3.ae.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libcam.hal3a.v3.ae.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libcam.hal3a.v3.ai3a.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libcam.hal3a.v3.ai3a.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libcam.hal3a.v3.awb.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libcam.hal3a.v3.awb.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libcam.hal3a.v3.dng.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libcam.hal3a.v3.dng.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libcam.hal3a.v3.fsmgr.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libcam.hal3a.v3.fsmgr.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libcam.hal3a.v3.lscMgr.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libcam.hal3a.v3.lscMgr.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libcam.hal3a.v3.lsctbl.50.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libcam.hal3a.v3.lsctbl.50.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libcam.hal3a.v3.nvram.50.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libcam.hal3a.v3.nvram.50.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libcam.hal3a.v3.platform.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libcam.hal3a.v3.platform.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libcam.hal3a.v3.resultpool.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libcam.hal3a.v3.resultpool.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libcam.hal3a.v3.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libcam.hal3a.v3.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libcam.halisp.buf.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libcam.halisp.buf.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libcam.halisp.common.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libcam.halisp.common.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libcam.halisp.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libcam.halisp.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libcam.halsensor.hwintegration.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libcam.halsensor.hwintegration.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libcam.halsensor.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libcam.halsensor.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libcam.iopipe.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libcam.iopipe.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libcam.isptuning.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libcam.isptuning.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libcam.pdtblgen.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libcam.pdtblgen.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libcam.tuning.cache.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libcam.tuning.cache.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libcam.utils.sensorprovider.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libcam.utils.sensorprovider.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libcam.vhdr.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libcam.vhdr.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libcamalgo.ispfeature.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libcamalgo.ispfeature.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libcamalgo.lsc.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libcamalgo.lsc.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libcamalgo.platform2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libcamalgo.platform2.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libcamalgo.rotate.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libcamalgo.rotate.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libcamalgo.vsf.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libcamalgo.vsf.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libcamdrv_isp.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libcamdrv_isp.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libcamdrv_tuning_mgr.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libcamdrv_tuning_mgr.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libcamdrv_twin.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libcamdrv_twin.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libcamera.custom.pd_buf_mgr.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libcamera.custom.pd_buf_mgr.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libcamera.customae.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libcamera.customae.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libcamera.customaf.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libcamera.customaf.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libcamera.customawb.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libcamera.customawb.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libcamera.customflk.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libcamera.customflk.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libcameracustom.camera.3a.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libcameracustom.camera.3a.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libcameracustom.camera.isp.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libcameracustom.camera.isp.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libcameracustom.camera.sensors.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libcameracustom.camera.sensors.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libcameracustom.camera_exif.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libcameracustom.camera_exif.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libcameracustom.eis.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libcameracustom.eis.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libcameracustom.flashlight.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libcameracustom.flashlight.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libcameracustom.lens.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libcameracustom.lens.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libcameracustom.plugin.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libcameracustom.plugin.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libcameracustom.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libcameracustom.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libdip_drv.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libdip_drv.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libdip_postproc.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libdip_postproc.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libdpframework.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libdpframework.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libeffecthal.base.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libeffecthal.base.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libfeature.face.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libfeature.face.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libfeature.stereo.provider.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libfeature.stereo.provider.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libfeature.vsdof.hal.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libfeature.vsdof.hal.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libfeature_3dnr.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libfeature_3dnr.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libfeature_eis.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libfeature_eis.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libfeature_fsc.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libfeature_fsc.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libfeature_lmv.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libfeature_lmv.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libfeature_rss.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libfeature_rss.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libfeatureiodrv_mem.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libfeatureiodrv_mem.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libgpudataproducer.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libgpudataproducer.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libimageio.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libimageio.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libimageio_plat_drv.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libimageio_plat_drv.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libimageio_plat_pipe.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libimageio_plat_pipe.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/liblpcnr.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/liblpcnr.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmnl.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmnl.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmsnr.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmsnr.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtk_drvb.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtk_drvb.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam.atmseventmgr.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam.atmseventmgr.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam.eventcallback.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam.eventcallback.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam.featurepipe.capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam.featurepipe.capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam.featurepipe.depthmap.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam.featurepipe.depthmap.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam.featurepipe.streaming.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam.featurepipe.streaming.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam.featurepipe.vsdof_util.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam.featurepipe.vsdof_util.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam.logicalmodule.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam.logicalmodule.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_3rdparty.core.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_3rdparty.core.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_3rdparty.customer.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_3rdparty.customer.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_3rdparty.mtk.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_3rdparty.mtk.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_3rdparty.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_3rdparty.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_calibration_convertor.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_calibration_convertor.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_calibration_provider.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_calibration_provider.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_debugutils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_debugutils.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_device3_app.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_device3_app.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_device3_hal.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_device3_hal.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_device3_hidl.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_device3_hidl.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_device3_hidlutils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_device3_hidlutils.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_device3_utils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_device3_utils.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_devicesessionpolicy.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_devicesessionpolicy.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_diputils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_diputils.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_exif.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_exif.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_fdvt.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_fdvt.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_featurepolicy.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_featurepolicy.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_featureutils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_featureutils.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_fwkutils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_fwkutils.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_grallocutils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_grallocutils.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_hwnode.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_hwnode.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_hwutils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_hwutils.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_imem.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_imem.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_imgbuf.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_imgbuf.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_mapping_mgr.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_mapping_mgr.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_metadata.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_metadata.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_metastore.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_metastore.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_mfb.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_mfb.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_modulefactory_aaa.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_modulefactory_aaa.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_modulefactory_custom.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_modulefactory_custom.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_modulefactory_drv.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_modulefactory_drv.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_modulefactory_utils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_modulefactory_utils.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_modulehelper.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_modulehelper.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_owe.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_owe.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_pipeline.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_pipeline.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_pipeline_fbm.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_pipeline_fbm.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_pipelinemodel.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_pipelinemodel.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_pipelinemodel_adapter.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_pipelinemodel_adapter.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_pipelinemodel_capture.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_pipelinemodel_capture.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_pipelinemodel_isp.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_pipelinemodel_isp.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_pipelinemodel_session.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_pipelinemodel_session.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_pipelinemodel_utils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_pipelinemodel_utils.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_pipelinemodel_zsl.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_pipelinemodel_zsl.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_pipelinepolicy-security.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_pipelinepolicy-security.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_pipelinepolicy-smvr.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_pipelinepolicy-smvr.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_pipelinepolicy.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_pipelinepolicy.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_pipelinepolicy_factory.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_pipelinepolicy_factory.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_prerelease.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_prerelease.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_rsc.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_rsc.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_scenariorecorder.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_scenariorecorder.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_stdutils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_stdutils.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_streamutils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_streamutils.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_synchelper.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_synchelper.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_sysutils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_sysutils.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_tuning_utils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_tuning_utils.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libmtkcam_ulog.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libmtkcam_ulog.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libneuralnetworks_sl_driver_mtk_prebuilt.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libneuralnetworks_sl_driver_mtk_prebuilt.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libneuron_adapter_mgvi.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libneuron_adapter_mgvi.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libneuron_runtime.5.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libneuron_runtime.5.so \
@@ -916,6 +1599,29 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libpq_cust_base.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libpq_cust_base.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libpq_prot.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libpq_prot.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libpqparamparser.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libpqparamparser.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libstereoinfoaccessor_vsdof.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libstereoinfoaccessor_vsdof.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/libvainr_model.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/libvainr_model.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/ov02b10_aac_macro_mipi_raw_IdxMgr.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/ov02b10_aac_macro_mipi_raw_IdxMgr.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/ov02b10_aac_macro_mipi_raw_tuning.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/ov02b10_aac_macro_mipi_raw_tuning.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/ov02b10_truly_macro_mipi_raw_IdxMgr.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/ov02b10_truly_macro_mipi_raw_IdxMgr.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/ov02b10_truly_macro_mipi_raw_tuning.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/ov02b10_truly_macro_mipi_raw_tuning.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/ov08d10_aac_ultra_mipi_raw_IdxMgr.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/ov08d10_aac_ultra_mipi_raw_IdxMgr.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/ov08d10_aac_ultra_mipi_raw_tuning.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/ov08d10_aac_ultra_mipi_raw_tuning.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/ov08d10_ofilm_ultra_mipi_raw_IdxMgr.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/ov08d10_ofilm_ultra_mipi_raw_IdxMgr.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/ov08d10_ofilm_ultra_mipi_raw_tuning.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/ov08d10_ofilm_ultra_mipi_raw_tuning.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/ov16a1q_aac_front_mipi_raw_IdxMgr.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/ov16a1q_aac_front_mipi_raw_IdxMgr.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/ov16a1q_aac_front_mipi_raw_tuning.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/ov16a1q_aac_front_mipi_raw_tuning.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/ov16a1q_ofilm_front_mipi_raw_IdxMgr.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/ov16a1q_ofilm_front_mipi_raw_IdxMgr.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/ov16a1q_ofilm_front_mipi_raw_tuning.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/ov16a1q_ofilm_front_mipi_raw_tuning.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/ov64b40_sunny_main_mipi_raw_IdxMgr.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/ov64b40_sunny_main_mipi_raw_IdxMgr.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/ov64b40_sunny_main_mipi_raw_tuning.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/ov64b40_sunny_main_mipi_raw_tuning.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/s5khp3_ofilm_main_mipi_raw_IdxMgr.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/s5khp3_ofilm_main_mipi_raw_IdxMgr.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/s5khp3_ofilm_main_mipi_raw_tuning.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/s5khp3_ofilm_main_mipi_raw_tuning.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/s5khp3_samsung_main_mipi_raw_IdxMgr.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/s5khp3_samsung_main_mipi_raw_IdxMgr.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/s5khp3_samsung_main_mipi_raw_tuning.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/s5khp3_samsung_main_mipi_raw_tuning.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/s5khpx_sunny_main_mipi_raw_IdxMgr.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/s5khpx_sunny_main_mipi_raw_IdxMgr.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mt6789/s5khpx_sunny_main_mipi_raw_tuning.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mt6789/s5khpx_sunny_main_mipi_raw_tuning.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/mtkcam/mt6789/libmtkcam_streaminfo_plugin-p1stt.so:$(TARGET_COPY_OUT_VENDOR)/lib64/mtkcam/mt6789/libmtkcam_streaminfo_plugin-p1stt.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/nfc_nci_nxp.so:$(TARGET_COPY_OUT_VENDOR)/lib64/nfc_nci_nxp.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/sensors.touch.detect.so:$(TARGET_COPY_OUT_VENDOR)/lib64/sensors.touch.detect.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/vendor.mediatek.hardware.apuware.apusys@2.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.mediatek.hardware.apuware.apusys@2.0.so \
@@ -926,6 +1632,16 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/vendor.mediatek.hardware.audio@7.1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.mediatek.hardware.audio@7.1.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.mediatek.hardware.bluetooth.audio@2.1.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.mediatek.hardware.bluetooth.audio@2.2.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/vendor.mediatek.hardware.camera.atms@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.mediatek.hardware.camera.atms@1.0.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/vendor.mediatek.hardware.camera.bgservice@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.mediatek.hardware.camera.bgservice@1.0.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/vendor.mediatek.hardware.camera.bgservice@1.1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.mediatek.hardware.camera.bgservice@1.1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/vendor.mediatek.hardware.camera.ccap@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.mediatek.hardware.camera.ccap@1.0.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/vendor.mediatek.hardware.camera.frhandler@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.mediatek.hardware.camera.frhandler@1.0.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/vendor.mediatek.hardware.camera.isphal@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.mediatek.hardware.camera.isphal@1.0.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/vendor.mediatek.hardware.camera.isphal@1.1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.mediatek.hardware.camera.isphal@1.1.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/vendor.mediatek.hardware.camera.lomoeffect@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.mediatek.hardware.camera.lomoeffect@1.0.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/vendor.mediatek.hardware.camera.postproc@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.mediatek.hardware.camera.postproc@1.0.so \
+    vendor/xiaomi/emerald/proprietary/vendor/lib64/vendor.mediatek.hardware.camera.security@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.mediatek.hardware.camera.security@1.0.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/vendor.mediatek.hardware.clientapi@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.mediatek.hardware.clientapi@1.0.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/vendor.mediatek.hardware.composer_ext@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.mediatek.hardware.composer_ext@1.0.so \
     vendor/xiaomi/emerald/proprietary/vendor/lib64/vendor.mediatek.hardware.mmagent@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.mediatek.hardware.mmagent@1.0.so \
